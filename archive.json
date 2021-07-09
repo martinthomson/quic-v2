@@ -1,0 +1,297 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2021-06-06T00:32:19.348599+00:00",
+  "repo": "martinduke/draft-duke-quic-v2",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [
+    {
+      "number": 1,
+      "id": "MDU6SXNzdWU4NjUyODQ1Nzc=",
+      "title": "Add a provisional version",
+      "url": "https://github.com/martinduke/draft-duke-quic-v2/issues/1",
+      "state": "CLOSED",
+      "author": "martinduke",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Because VN is still a moving target, and the WG might want to increase the diff from v1, the draft should specify an experimental version number to use until RFC, at which point we can switch over to 0x00000002.",
+      "createdAt": "2021-04-22T18:19:48Z",
+      "updatedAt": "2021-04-23T21:05:21Z",
+      "closedAt": "2021-04-23T21:05:21Z",
+      "comments": [
+        {
+          "author": "huitema",
+          "authorAssociation": "NONE",
+          "body": "Yes. Something like \"0xFF0100nn\"...",
+          "createdAt": "2021-04-23T19:41:14Z",
+          "updatedAt": "2021-04-23T19:41:14Z"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "id": "MDU6SXNzdWU4NjYzODU0MzU=",
+      "title": "Retry protection key",
+      "url": "https://github.com/martinduke/draft-duke-quic-v2/issues/2",
+      "state": "CLOSED",
+      "author": "huitema",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "The draft defines a V2 salt. Should it also define a V2 retry protection key?",
+      "createdAt": "2021-04-23T19:45:48Z",
+      "updatedAt": "2021-04-26T19:28:16Z",
+      "closedAt": "2021-04-26T19:28:16Z",
+      "comments": []
+    },
+    {
+      "number": 3,
+      "id": "MDU6SXNzdWU4NjgwNzI2NDA=",
+      "title": "Update Labels",
+      "url": "https://github.com/martinduke/draft-duke-quic-v2/issues/3",
+      "state": "CLOSED",
+      "author": "martinduke",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "We can get complete key separation between quic v1 and v2 by simply changing the labels used as HKDF inputs.",
+      "createdAt": "2021-04-26T19:31:43Z",
+      "updatedAt": "2021-04-26T19:56:58Z",
+      "closedAt": "2021-04-26T19:56:58Z",
+      "comments": [
+        {
+          "author": "martinduke",
+          "authorAssociation": "OWNER",
+          "body": "9.6 of quic-tls says we should, so this is inflight.",
+          "createdAt": "2021-04-26T19:46:25Z",
+          "updatedAt": "2021-04-26T19:46:25Z"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "id": "MDU6SXNzdWU4NjkzMzQxMDI=",
+      "title": "Different version number",
+      "url": "https://github.com/martinduke/draft-duke-quic-v2/issues/4",
+      "state": "CLOSED",
+      "author": "martinduke",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "@martinthomson wants to use some other version number, not 2. I'd have to retitle the draft, but other than that I don't have a strong feeling about it.",
+      "createdAt": "2021-04-27T23:06:09Z",
+      "updatedAt": "2021-04-28T16:04:49Z",
+      "closedAt": "2021-04-28T16:04:49Z",
+      "comments": [
+        {
+          "author": "martinduke",
+          "authorAssociation": "OWNER",
+          "body": "Upon further reflection, this is a pretty fundamental question: are QUIC versions incremental, where in general version N comes after N-1 and is implied to be \"better\", or are they randomly spread over the space with no clear temporal or quality relationship?",
+          "createdAt": "2021-04-28T04:35:31Z",
+          "updatedAt": "2021-04-28T04:35:31Z"
+        },
+        {
+          "author": "kazuho",
+          "authorAssociation": "NONE",
+          "body": "> are QUIC versions incremental, where in general version N comes after N-1 and is implied to be \"better\", or are they randomly spread over the space with no clear temporal or quality relationship?\r\n\r\nI think this is the framing that we should use for reaching a resolution.\r\n\r\nThe reason we chose \"HTTP/3\" as the name for the HTTP binding for QUIC is because people tend to believe that increments on version number represent something better. It'd be hard if not impossible to change that perception.\r\n\r\nComparing to that, this \"v2\" draft is not something meant to be better than v1 - it is merely an alternative wire encoding of v1.\r\n\r\nBased on that, I tend to agree with @martinthomson; it would be less confusing to people if we choose a large random number than \"v2.\"",
+          "createdAt": "2021-04-28T04:46:09Z",
+          "updatedAt": "2021-04-28T04:46:09Z"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "id": "MDU6SXNzdWU4Njk0ODEwNTI=",
+      "title": "ALPN",
+      "url": "https://github.com/martinduke/draft-duke-quic-v2/issues/5",
+      "state": "CLOSED",
+      "author": "martinduke",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "on slack some are saying we should roll a new h3 ALPN for running over quicv2. I cannot quite follow the argument but this is a better venue for the discussion.",
+      "createdAt": "2021-04-28T04:26:07Z",
+      "updatedAt": "2021-06-02T18:22:48Z",
+      "closedAt": "2021-06-02T18:22:48Z",
+      "comments": [
+        {
+          "author": "martinthomson",
+          "authorAssociation": "NONE",
+          "body": "You definitely need a new specification, because a different QUIC version might not be suitable.  You either say:\r\n\r\n* h3 can be used with QUICv2, or\r\n* h3q2 (or whatever new string you like) identifies HTTP/3 when running over QUICv2.\r\n\r\nThere are lots of arguments as to why you might choose to do one or the other.",
+          "createdAt": "2021-04-28T04:33:18Z",
+          "updatedAt": "2021-04-28T04:33:18Z"
+        },
+        {
+          "author": "LPardue",
+          "authorAssociation": "NONE",
+          "body": "I'm swayed more toward a new ALP.N at the moment ",
+          "createdAt": "2021-04-28T11:34:38Z",
+          "updatedAt": "2021-04-28T11:34:38Z"
+        },
+        {
+          "author": "LPardue",
+          "authorAssociation": "NONE",
+          "body": "FWIW we painted ourselves into this corner. We punting on the problem and simply tied H3 to v1. Now we are actively trying to solve VN we might be able to pay back the tech debt. For example, a document that updates H3 to say that it can work over versions compatible with v1. Incompatible versions could still need to defined as a new application mapping,",
+          "createdAt": "2021-04-28T12:44:35Z",
+          "updatedAt": "2021-04-28T12:44:35Z"
+        },
+        {
+          "author": "RyanTheOptimist",
+          "authorAssociation": "NONE",
+          "body": "Whatever we do, I think we need to ensure that servers can give sufficient information to clients via Alt-Svc so that the client can pick a compatible version (if any) and avoid VN. This could, then, be solved via Alt-Svc layer or via ALPN, but I think this is any important property.",
+          "createdAt": "2021-04-28T18:39:05Z",
+          "updatedAt": "2021-04-28T18:39:05Z"
+        },
+        {
+          "author": "martinduke",
+          "authorAssociation": "OWNER",
+          "body": "Well \"avoiding VN\" is only important to the extent that we can't do compatible VN.",
+          "createdAt": "2021-04-28T18:50:54Z",
+          "updatedAt": "2021-04-28T18:50:54Z"
+        },
+        {
+          "author": "RyanTheOptimist",
+          "authorAssociation": "NONE",
+          "body": "I think we want to allow the existence of a server that only supports v2 and servers that only support v1.... and clients that only support v2 and clients that only support v1. Given this, there will be client : server pairs which do not support any mutually compatible options. It seems like it would be desirable for clients to be able to deduce this from Alt-Svc without needing to see the QUIC connection to the server fail?",
+          "createdAt": "2021-04-28T19:54:30Z",
+          "updatedAt": "2021-04-28T19:54:30Z"
+        },
+        {
+          "author": "RyanTheOptimist",
+          "authorAssociation": "NONE",
+          "body": "Oh, and this text from the HTTP/3 docs is probably relevant:\r\n\r\n>    HTTP/3 relies on QUIC version 1 as the underlying transport.  The use\r\n>    of other QUIC transport versions with HTTP/3 MAY be defined by future\r\n>    specifications.\r\n",
+          "createdAt": "2021-04-28T21:17:16Z",
+          "updatedAt": "2021-04-28T21:17:16Z"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "id": "MDU6SXNzdWU4NzExODMzOTg=",
+      "title": "Grease the packet type?",
+      "url": "https://github.com/martinduke/draft-duke-quic-v2/issues/7",
+      "state": "OPEN",
+      "author": "martinduke",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "It would be a simple matter to switch around the packet type codes in long headers, e.g.\r\n\r\n0x0 = Retry\r\n0x1 = Handshake\r\n0x2 = 0-RTT\r\n0x3 = Initial\r\n\r\nso no one ossifies on 0x0 = Initial.",
+      "createdAt": "2021-04-29T15:58:09Z",
+      "updatedAt": "2021-04-29T15:58:09Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
+  "pulls": [
+    {
+      "number": 6,
+      "id": "MDExOlB1bGxSZXF1ZXN0NjI1MzcxNjkz",
+      "title": "alpn text",
+      "url": "https://github.com/martinduke/draft-duke-quic-v2/pull/6",
+      "state": "MERGED",
+      "author": "martinduke",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "One way to fix #5 ",
+      "createdAt": "2021-04-28T16:18:08Z",
+      "updatedAt": "2021-06-02T18:22:48Z",
+      "baseRepository": "martinduke/draft-duke-quic-v2",
+      "baseRefName": "main",
+      "baseRefOid": "eb1b70ee4e069483599e798a9432bc1fc7c7a120",
+      "headRepository": "martinduke/draft-duke-quic-v2",
+      "headRefName": "alpn",
+      "headRefOid": "9e74378765f92e4dd7d1da6897cf6241ec7cd8b5",
+      "closedAt": "2021-06-02T18:22:48Z",
+      "mergedAt": "2021-06-02T18:22:48Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "0abe99f92456b09314e786b6e271bcec66ce76d5"
+      },
+      "comments": [
+        {
+          "author": "MikeBishop",
+          "authorAssociation": "NONE",
+          "body": "I have a feeling you'll need to say that this \"updates\" HTTP/3.",
+          "createdAt": "2021-04-28T20:55:36Z",
+          "updatedAt": "2021-04-28T20:55:36Z"
+        }
+      ],
+      "reviews": []
+    },
+    {
+      "number": 8,
+      "id": "MDExOlB1bGxSZXF1ZXN0NjYwMjkxMzE5",
+      "title": "sync with main",
+      "url": "https://github.com/martinduke/draft-duke-quic-v2/pull/8",
+      "state": "MERGED",
+      "author": "martinduke",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2021-06-02T18:21:50Z",
+      "updatedAt": "2021-06-02T18:23:33Z",
+      "baseRepository": "martinduke/draft-duke-quic-v2",
+      "baseRefName": "alpn",
+      "baseRefOid": "9e74378765f92e4dd7d1da6897cf6241ec7cd8b5",
+      "headRepository": "martinduke/draft-duke-quic-v2",
+      "headRefName": "main",
+      "headRefOid": "0abe99f92456b09314e786b6e271bcec66ce76d5",
+      "closedAt": "2021-06-02T18:23:33Z",
+      "mergedAt": "2021-06-02T18:23:33Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "68020698e4d9fe9db02478ff6751fb474b3a5534"
+      },
+      "comments": [],
+      "reviews": []
+    }
+  ]
+}
