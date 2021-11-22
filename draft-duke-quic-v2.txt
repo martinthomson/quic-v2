@@ -4,12 +4,12 @@
 
 QUIC                                                             M. Duke
 Internet-Draft                                         F5 Networks, Inc.
-Intended status: Standards Track                             2 June 2021
-Expires: 4 December 2021
+Intended status: Standards Track                        22 November 2021
+Expires: 26 May 2022
 
 
                              QUIC Version 2
-                       draft-duke-quic-v2-latest
+                           draft-duke-quic-v2
 
 Abstract
 
@@ -49,7 +49,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 December 2021.
+   This Internet-Draft will expire on 26 May 2022.
 
 Copyright Notice
 
@@ -61,9 +61,9 @@ Copyright Notice
    license-info) in effect on the date of publication of this document.
    Please review these documents carefully, as they describe your rights
    and restrictions with respect to this document.  Code Components
-   extracted from this document must include Simplified BSD License text
-   as described in Section 4.e of the Trust Legal Provisions and are
-   provided without warranty as described in the Simplified BSD License.
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
 
 Table of Contents
 
@@ -226,45 +226,44 @@ nonce = 0x141b99c239b03e785d6a2e9f
 
    [QUIC-VN]  Schinazi, D. and E. Rescorla, "Compatible Version
               Negotiation for QUIC", Work in Progress, Internet-Draft,
-              draft-ietf-quic-version-negotiation-04, 26 May 2021,
+              draft-ietf-quic-version-negotiation-05, 25 October 2021,
               <https://datatracker.ietf.org/doc/html/draft-ietf-quic-
-              version-negotiation-04.txt>.
+              version-negotiation-05>.
 
    [RFC9000]  Iyengar, J., Ed. and M. Thomson, Ed., "QUIC: A UDP-Based
               Multiplexed and Secure Transport", RFC 9000,
               DOI 10.17487/RFC9000, May 2021,
-              <https://datatracker.ietf.org/doc/html/rfc9000>.
+              <https://www.rfc-editor.org/rfc/rfc9000>.
 
    [RFC9001]  Thomson, M., Ed. and S. Turner, Ed., "Using TLS to Secure
               QUIC", RFC 9001, DOI 10.17487/RFC9001, May 2021,
-              <https://datatracker.ietf.org/doc/html/rfc9001>.
+              <https://www.rfc-editor.org/rfc/rfc9001>.
 
    [RFC9002]  Iyengar, J., Ed. and I. Swett, Ed., "QUIC Loss Detection
               and Congestion Control", RFC 9002, DOI 10.17487/RFC9002,
-              May 2021, <https://datatracker.ietf.org/doc/html/rfc9002>.
+              May 2021, <https://www.rfc-editor.org/rfc/rfc9002>.
 
 9.2.  Informative References
 
    [I-D.duke-quic-version-aliasing]
               Duke, M., "QUIC Version Aliasing", Work in Progress,
-              Internet-Draft, draft-duke-quic-version-aliasing-06, 13
-              May 2021, <https://datatracker.ietf.org/doc/html/draft-
-              duke-quic-version-aliasing-06.txt>.
+              Internet-Draft, draft-duke-quic-version-aliasing-07, 25
+              October 2021, <https://datatracker.ietf.org/doc/html/
+              draft-duke-quic-version-aliasing-07>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
-              <https://datatracker.ietf.org/doc/html/rfc2119>.
+              <https://www.rfc-editor.org/rfc/rfc2119>.
 
    [RFC7301]  Friedl, S., Popov, A., Langley, A., and E. Stephan,
               "Transport Layer Security (TLS) Application-Layer Protocol
               Negotiation Extension", RFC 7301, DOI 10.17487/RFC7301,
-              July 2014,
-              <https://datatracker.ietf.org/doc/html/rfc7301>.
+              July 2014, <https://www.rfc-editor.org/rfc/rfc7301>.
 
    [RFC8999]  Thomson, M., "Version-Independent Properties of QUIC",
               RFC 8999, DOI 10.17487/RFC8999, May 2021,
-              <https://datatracker.ietf.org/doc/html/rfc8999>.
+              <https://www.rfc-editor.org/rfc/rfc8999>.
 
 Appendix A.  Changelog
 
