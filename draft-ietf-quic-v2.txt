@@ -33,7 +33,7 @@ Discussion Venues
    This note is to be removed before publishing as an RFC.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/quicwg/draft-duke-quic-v2.
+   https://github.com/quicwg/quic-v2.
 
 Status of This Memo
 
