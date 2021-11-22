@@ -9,7 +9,7 @@ Expires: 26 May 2022
 
 
                              QUIC Version 2
-                           draft-ietf-quic-v2
+                       draft-ietf-quic-v2-latest
 
 Abstract
 
