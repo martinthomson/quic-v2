@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-11-23T00:25:15.995309+00:00",
+  "timestamp": "2021-11-25T00:25:27.075486+00:00",
   "repo": "quicwg/quic-v2",
   "labels": [
     {
@@ -395,6 +395,48 @@
       },
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 13,
+      "id": "PR_kwDOFX7TQc4u7Fp3",
+      "title": "Fix typo in Key Updates label",
+      "url": "https://github.com/quicwg/quic-v2/pull/13",
+      "state": "MERGED",
+      "author": "IvanNardi",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2021-11-23T18:35:53Z",
+      "updatedAt": "2021-11-23T18:51:15Z",
+      "baseRepository": "quicwg/quic-v2",
+      "baseRefName": "main",
+      "baseRefOid": "9d29f07d8743238c363c278c68f72715c5efec5b",
+      "headRepository": "IvanNardi/quic-v2",
+      "headRefName": "key-update",
+      "headRefOid": "64ac9f36cae4ec2057485ef65b81a65f8b2df1dd",
+      "closedAt": "2021-11-23T18:43:15Z",
+      "mergedAt": "2021-11-23T18:43:14Z",
+      "mergedBy": "martinduke",
+      "mergeCommit": {
+        "oid": "4557dc73f1b3caa8f7b81077791babd6d6f5f153"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOFX7TQc4whW_k",
+          "commit": {
+            "abbreviatedOid": "64ac9f3"
+          },
+          "author": "martinduke",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2021-11-23T18:41:37Z",
+          "updatedAt": "2021-11-23T18:41:37Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
