@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-11-25T00:25:27.075486+00:00",
+  "timestamp": "2021-11-30T00:25:32.242691+00:00",
   "repo": "quicwg/quic-v2",
   "labels": [
     {
@@ -272,6 +272,22 @@
       "createdAt": "2021-11-12T20:46:59Z",
       "updatedAt": "2021-11-22T23:06:26Z",
       "closedAt": "2021-11-22T23:06:26Z",
+      "comments": []
+    },
+    {
+      "number": 14,
+      "id": "I_kwDOFX7TQc4_jV8O",
+      "title": "Clarify about cross version 0-RTT via Compatible Version Negotiation",
+      "url": "https://github.com/quicwg/quic-v2/issues/14",
+      "state": "OPEN",
+      "author": "flano-yuki",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "Thank you for this work.\r\n\r\nCan quic v2 server accept a v1 0-RTT packet via Compatible Version Negotiation?\r\n\r\nIf I understand correctly, The [version negotiation specification](https://quicwg.org/version-negotiation/draft-ietf-quic-version-negotiation.html#name-interaction-with-0-rtt) says that \"future versions will determine how to handle it.\" Even if the server accepts v1 packets as is, I would think the handling needs to be described in v2.",
+      "createdAt": "2021-11-29T16:17:06Z",
+      "updatedAt": "2021-11-29T16:17:06Z",
+      "closedAt": null,
       "comments": []
     }
   ],
