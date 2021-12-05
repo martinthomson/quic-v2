@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2021-11-30T00:25:32.242691+00:00",
+  "timestamp": "2021-12-05T00:28:09.638074+00:00",
   "repo": "quicwg/quic-v2",
   "labels": [
     {
@@ -286,7 +286,31 @@
       "labels": [],
       "body": "Thank you for this work.\r\n\r\nCan quic v2 server accept a v1 0-RTT packet via Compatible Version Negotiation?\r\n\r\nIf I understand correctly, The [version negotiation specification](https://quicwg.org/version-negotiation/draft-ietf-quic-version-negotiation.html#name-interaction-with-0-rtt) says that \"future versions will determine how to handle it.\" Even if the server accepts v1 packets as is, I would think the handling needs to be described in v2.",
       "createdAt": "2021-11-29T16:17:06Z",
-      "updatedAt": "2021-11-29T16:17:06Z",
+      "updatedAt": "2021-12-02T00:59:05Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "kazu-yamamoto",
+          "authorAssociation": "NONE",
+          "body": "Developers are actually puzzled.\r\nSee https://github.com/quicwg/version-negotiation/issues/68",
+          "createdAt": "2021-12-02T00:59:05Z",
+          "updatedAt": "2021-12-02T00:59:05Z"
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "id": "I_kwDOFX7TQc4_2rCC",
+      "title": "Need to specify the update process",
+      "url": "https://github.com/quicwg/quic-v2/issues/15",
+      "state": "OPEN",
+      "author": "huitema",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "We now have some implementation experience, and got interop between 2 implementations. That's great, but the process was difficult because the transition is somehow under specified. There was a lot of discussion as issues with the compatible version negotiation draft:\r\n\r\n* [Specify impact on 0-RTT, session resume tickets, etc.](https://github.com/quicwg/version-negotiation/issues/68)\r\n* [Security issue when upgrading based on received version in header](https://github.com/quicwg/version-negotiation/issues/70)\r\n* [Validation on incompatible negotiation](https://github.com/quicwg/version-negotiation/issues/73)\r\n\r\nThese issues cannot be fully addressed in the compatible version negotiation draft, which has to be version independent. Instead, they need to be addressed in specific drafts. The V2 draft, for example, should specify exactly what happens during the version negotiation. My understanding is that when version negotiation succeeds, we will see something like:\r\n\r\n- Client sends a first flight composed of Version 1 initial packets\r\n- Server may send Version 1 initial packets containing acknowledgement, e.g., to manage losses of Initial packets\r\n- At some point, the server will have received and parsed the transport parameters, and decided to upgrade to V2\r\n- After that point, server will send version 2 packets (Initial, Handshake, 1RTT)\r\n- Client will receive version 2 packets and should be ready to process them before the negotiation completes\r\n- The transport parameters will arrive in V2 handshake packets, after which the negotiation is done.\r\n\r\nThere are quite a few potential issues that need resolution:\r\n\r\n1) As explained above, in case of successful negotiation, the client expects the server to start sending V2 packets asap. Shall it ignore V1 packets as soon as it received V2 packets? Should in check version numbers in Initial packets, in a process similar to key updates?\r\n2) If the client receives transport parameters on a version 2 packet, what shall it do if the chosen version is V1?\r\n3) And vice versa?\r\n4) If the server receives V2 handshake packets from the client, shall it conclude that the negotiation is successful?\r\n5) In case of session resumption, does the client resume using V1 or V2? I think the answer to that question depends on the content of the \"supported versions\" list provided by the server. If it includes V2, then the server is ready to receive V2 packets. If the server is part of a server farm with partial deployment of V2, it should not say that V2 is ready. The answer may also depend on local conditions at the client.\r\n6) If the client resumes using V1, it will send 0-RTT packets using V1. The server will receive these packets after the client's initial packets, and thus after receiving the transport parameters and completing the version upgrade. Should the server drop these packets? Or should it continue accept them until the handshake completes?\r\n7) On the client side, there will be a delay between completing the negotiation and finalizing the handshake. The client may want to send 0-RTT packets during that interval. Shall it send those using V1 or V2?\r\n\r\n\r\n",
+      "createdAt": "2021-12-04T21:14:50Z",
+      "updatedAt": "2021-12-04T21:14:50Z",
       "closedAt": null,
       "comments": []
     }
